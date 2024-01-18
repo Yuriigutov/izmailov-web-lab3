@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* чищає попередні плаваючі елементи та додає блочний контекст */
+
+[class^="col-"] {
+  float: left;
+  box-sizing: border-box;
+}
+/* Цей селектор застосовує стилі до всіх елементів, чиї класи починаються з col- */
+/* падіння та границі в обчисленні ширини та висоти. */
+
+.col-12 {
+  width: 100%;
+}
+
+.col-md-6 {
+  width: 50%;
+}
+
+.col-lg-4 {
+  width: 33.33%;
+}
+
+.box {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 9px 3px;
+  position: relative;
+  background-color: #ada7b7;
+}
+
+.box p {
+  margin: 10px 0;
+}
+
+.caption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+}
+
+.caption-1 {
+  background-color: rgb(109, 97, 192);
+}
+
+.caption-2 {
+  background-color: rgb(214, 143, 20);
+}
+
+.caption-3 {
+  background-color: blueviolet;
+}
+
+.box .caption + p {
+  margin-top: 30px;
+}
+
+/* Адапт  */
+/* tablet */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .col-md-6,
+  .col-lg-4 {
+    float: left;
+    width: 48%;
+    margin: 1%;
+  }
+
+  .col-12:nth-child(3n + 1),
+  .col-12:nth-child(3n + 2) {
+    width: 48%;
+  }
+
+  .col-12:nth-child(3n + 3) {
+    clear: both;
+    width: 99%;
+    margin: 4px;
+  }
+}
+/* Desktop */
+@media screen and (min-width: 992px) {
+  .col-lg-4 {
+    float: left;
+    width: 31%;
+    margin: 1%;
+  }
+}
+/* mobile */
+@media screen and (max-width: 600px) {
+  .col-md-6,
+  .col-lg-4 {
+    width: 100%;
+    margin: 5% 0;
+    float: none;
+  }
+}
